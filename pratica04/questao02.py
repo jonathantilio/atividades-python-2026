@@ -1,17 +1,19 @@
 #2 - Criar um código que registre as notas de alunos e calcular a média da turma.
 
-def verificar_palindromo(texto: str) -> str:
-    texto_limpo = ''.join(char.lower() for char in texto if char.isalnum())
-    if texto_limpo == texto_limpo[::-1]:
-        return "Sim"
-    else:
-        return "Não"
+def registrar_notas():
+    print("=== Registro de Notas da Turma ===")
+    
+    qtd_alunos = int(input("Digite o número de alunos: "))
+    
+    notas = []
 
-def main():
-    print("=== Verificador de Palíndromo ===")
-    entrada = input("Digite uma palavra ou frase: ")
-    resultado = verificar_palindromo(entrada)
-    print(f"É palíndromo? {resultado}")
+    for i in range(qtd_alunos):
+        nota = float(input(f"Digite a nota do aluno {i+1}: "))
+        notas.append(nota)
+    
+    media = sum(notas) / len(notas)
+    
+    print("\nNotas registradas:", notas)
+    print(f"Média da turma: {media:.2f}")
 
-if __name__ == "__main__":
-    main()
+registrar_notas()
